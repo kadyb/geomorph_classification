@@ -1,0 +1,64 @@
+ID_FORM,PL,EN,CODE,COLOR
+NA,NA,NA,0,#ffffff
+A05,antropogeniczny zbiornik wodny,anthropogenic water reservoir ,0,#bfffff
+BB,brak badań,lack of research,0,#ffffff
+D01,"powierzchnia zrównania w położeniu
+wierzchowinowym",equalization surface in the top position,3,#ceaa61
+D02,"powierzchnia zrównania w położeniu
+stokowym",equalization surface in the slope position,4,#d9bf7f
+D03,powierzchnia zrównania w dnach kotlin,equalization surface in the basins of valleys,5,#d6c2b0
+D09,czoło progu strukturalnego (kuesty),front of the structural threshold (cuesta),6,#917780
+D10,zaproże progu strukturalnego (kuesty),back of the structural threshold (cuesta),7,#823d00
+D13,kotlina śródgórska,intra-mountain basin,8,#cba796
+D17,ostaniec denudacyjny - twardzielec,denudational outcrop - inselberg,9,#8c0000
+D18,ostaniec denudacyjny - nek,denudational outcrop - volcanic neck,10,#aa0000
+D19,ostaniec denudacyjny - góra stołowa,denudational outcrop - tableland,11,#b21212
+D20,ostaniec denudacyjny - pozostałe,denudational outcrop - others,12,#d93636
+D21,pojedyncza skałka,single rock,13,#e5b88a
+D24,ściana skalna lub stok skalny,rock wall or rock slope,14,#d19052
+D25,akumulacyjny stok gruzowy,accumulative rubble slope,15,#93776c
+D26,osuwisko aktywne,active landslide,16,#ffe5a6
+D34,nisza źródliskowa,headwater niche,17,#cca678
+E02,niecka deflacyjna,deflation trough,18,#e5c97a
+E04,pojedyncza wydma ustabilizowana,single stabilized dune,19,#dbab00
+E05,zespół wydm ustabilizowanych,complex of stabilized dunes,20,#dbab00
+E06,równina zwydmiona,dunes plain,21,#ffff00
+E07,garb lessowy,loess hump,22,#e5c300
+E08,równina lessowa,loess plain,23,#ffffab
+E09,"równina eolicznych piasków
+pokrywowych",plain of aeolian sands,24,#ffcc59
+F07,"dno doliny płaskodennej rzeki
+anastomozującej",valley bottom of a flat-bottomed river,25,#d5e8a6
+F08,terasa zalewowa,floodplain,26,#70b252
+F19,stożek napływowy,alluvial fan,27,#b2b200
+F20,równina proluwialna,proluvial plain,28,#70a800
+G01,wysoczyzna morenowa płaska,flat moraine upland,29,#bfb2db
+G02,wysoczyzna morenowa falista,wavy moraine upland,30,#bb89d7
+G06,drumliny i formy pokrewne,drumlins and related forms,31,#a80085
+G07,"wielkoskalowe prostoliniowe wały
+moreny dennej",large-scale rectilinear shafts,32,#f2ccd9
+G12,żłób polodowcowy,postglacial gutter,33,#092973
+G16,"próg kotła polodowcowego lub doliny
+wiszącej",sill of a glacial cirque or valley,34,#61c2b6
+G18,rynna polodowcowa,postglacial trough,35,#7c2d8f
+G19,kręte wały z erozji wód subglacjalnych,winding dikes from subglacial water erosion,36,#a800e5
+G23,stożek glacimarginalny,glacimarginal cone,37,#9ae500
+G24,krawędź kontaktu lodowego,ice contact edge,38,#9ea6d6
+G25,dno doliny z pokrywą fluwioglacjalną,valley bottom with fluvioglacial cover,39,#d926f2
+G26,dno doliny z pokrywą morenową,valley bottom with moraine cover,40,#a362ba
+G27,morena pagórkowata,hilly moraine,41,#737300
+G29,kem i stoliwo kemowe,kame and kame table,42,#d9cccc
+G30,terasa kemowa,kame terrace,43,#cccc66
+G31,zagłębienie wytopiskowe,melting cavity,44,#f5f54c
+G32,stożek sandrowy/glacifluwialny,sander/glacifluvial cone ,45,#ccf573
+G33,równina lub szlak sandrowy,plain or sandy trail,46,#8cd966
+G34,dolina proglacjalna,proglacial valley,47,#e5bf4c
+G35,dolina marginalna,marginal valley,48,#62982b
+G36,równina erozyjna wód roztopowych,meltwater erosion plain,49,#66a373
+L05,plaża,beach,50,#ffff66
+L06,wydmy nadbrzeżne,coastal dunes,51,#daf200
+L07,kosa lub mierzeja,scythe or spit,52,#00a887
+L08,delta wsteczna,retrograde delta,53,#66cc99
+L09,równina nadmorska,coastal plain,54,#0073a6
+Y01,równina denudacji peryglacjalnej,periglacial denudation plain,55,#ffd9e8
+Y02,reliktowy lodowiec gruzowy,relict rock glacier,56,#ff7fa6
