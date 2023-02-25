@@ -76,5 +76,8 @@ for (i in idx) {
 }
 
 param_df = cbind(param_df, accuracy = acc)
+idx_max = which.max(param_df$accuracy)
+param_df[idx_max, ]
+
 if (!dir.exists("results")) dir.create("results")
 write.csv(param_df, "results/lightgbm.csv", row.names = FALSE)

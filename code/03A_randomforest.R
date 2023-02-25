@@ -26,9 +26,9 @@ idx = sample(nrow(param_df), nrow(param_df) / 2) # 72 models
 acc = rep(NA_real_, times = nrow(param_df))
 ii = 1 # loop counter
 for (i in idx) {
-  
+
   cat(ii, "/", length(idx), "\n")
-  
+
   model = ranger(class ~ ., train, importance = "impurity",
                  num.trees = param_df$num.trees[i],
                  mtry = param_df$mtry[i],
@@ -37,21 +37,24 @@ for (i in idx) {
                  seed = 1, verbose = FALSE,
                  num.threads = 12)
   model$predictions = NULL # remove predictions from model
-  
+
   ## predict
   pred = predict(model, test[, -1], verbose = FALSE)$predictions
-  
+
   ## make sure model can predict all classes
   if (length(levels(pred)) != 52) {
     acc[i] = -1
   } else {
     acc[i] = accuracy_vec(test$class, pred)
   }
-  
+
   ii = ii + 1
-  
+
 }
 
 param_df = cbind(param_df, accuracy = acc)
+idx_max = which.max(param_df$accuracy)
+param_df[idx_max, ]
+
 if (!dir.exists("results")) dir.create("results")
 write.csv(param_df, "results/randomforest.csv", row.names = FALSE)
