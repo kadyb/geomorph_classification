@@ -1,11 +1,11 @@
-### THIS SCRIPT REQUIRES SAGA GIS AND GDAL TO BE INSTALLED ### 
+### THIS SCRIPT REQUIRES SAGA GIS AND GDAL TO BE INSTALLED ###
 
 ## the extent of original DEM is much greater than the borders of Poland
 ## DEM must be in "tmp" subfolder (it will be cut to the borders later)
 output = file.path("data", "variables", "tmp")
 DEM = file.path(output, "01_ELEVATION.tif")
 
-  
+
 ## SLOPE
 system(
   paste(
@@ -73,7 +73,7 @@ system(
 )
 system(
   paste(
-    "gdalwarp", DEM, file.path(output, "08_MEDIAN500.tif"), "-tr 30 30", "-r near"
+    "gdalwarp", tmp, file.path(output, "08_MEDIAN500.tif"), "-tr 30 30", "-r near"
   )
 )
 
@@ -86,7 +86,7 @@ system(
 )
 system(
   paste(
-    "gdalwarp", DEM, file.path(output, "09_MEDIAN1000.tif"), "-tr 30 30", "-r near"
+    "gdalwarp", tmp, file.path(output, "09_MEDIAN1000.tif"), "-tr 30 30", "-r near"
   )
 )
 
