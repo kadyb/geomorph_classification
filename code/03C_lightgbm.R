@@ -11,6 +11,7 @@ rm(df, trainIndex)
 
 # class must be numeric, start with 0 and numbering must be continuous
 train$class = as.numeric(train$class) - 1
+num_class = length(unique(train$class))
 test$class = factor(as.numeric(test$class))
 
 ## tuning parameters
@@ -65,7 +66,7 @@ for (i in idx) {
   pred_class = factor(pred_class)
 
   ## make sure model can predict all classes
-  if (length(levels(pred_class)) != 52) {
+  if (length(levels(pred_class)) != num_class) {
     acc[i] = -1
   } else {
     acc[i] = accuracy_vec(test$class, pred_class)

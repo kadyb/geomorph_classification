@@ -8,6 +8,7 @@ trainIndex = sample(nrow(df), size = n)
 train = df[trainIndex, ]
 test = df[-trainIndex, ]
 rm(df, trainIndex)
+num_class = length(unique(train$class))
 
 ## tuning parameters
 num.trees = c(100, 500, 1000)
@@ -42,7 +43,7 @@ for (i in idx) {
   pred = predict(model, test[, -1], verbose = FALSE)$predictions
 
   ## make sure model can predict all classes
-  if (length(levels(pred)) != 52) {
+  if (length(levels(pred)) != num_class) {
     acc[i] = -1
   } else {
     acc[i] = accuracy_vec(test$class, pred)

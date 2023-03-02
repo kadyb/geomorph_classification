@@ -20,6 +20,7 @@ getRegion = function(f) {
 res = c(30, 30)
 if (!dir.exists("data/raster_maps")) dir.create("data/raster_maps")
 
+## rasterize geomorphological maps
 for (f in files) {
 
   vec = read_sf(f)
@@ -49,7 +50,7 @@ for (f in files) {
   class = read_stars(f, proxy = FALSE)
   class[[1]] = as.integer(class[[1]])
   var_crop = st_crop(var, st_bbox(class))
-  var_crop = st_as_stars(var_crop)
+  var_crop = st_as_stars(var_crop) # load into memory
   var_crop = st_warp(var_crop, class, method = "near") # align grids
   class = as.vector(class[[1]])
   var_crop = data.frame(var_crop)[, -c(1, 2)]

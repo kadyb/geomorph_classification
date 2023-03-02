@@ -11,6 +11,7 @@ rm(df, trainIndex)
 
 # class must be numeric, start with 0 and numbering must be continuous
 train$class = as.numeric(train$class) - 1
+num_class = length(unique(train$class))
 xgb_train = xgb.DMatrix(as.matrix(train[, -1]), label = train$class)
 test$class = factor(as.numeric(test$class))
 
@@ -43,7 +44,7 @@ for (i in idx) {
   )
 
   model = xgb.train(xgb_train, nrounds = param_df$nrounds[i], params = params,
-                    num_class = length(unique(train$class)))
+                    num_class = num_class)
 
   ## predict
   pred = predict(model, as.matrix(test[, -1]), reshape = TRUE)
@@ -51,7 +52,7 @@ for (i in idx) {
   pred_class = factor(pred_class)
 
   ## make sure model can predict all classes
-  if (length(levels(pred_class)) != 52) {
+  if (length(levels(pred_class)) != num_class) {
     acc[i] = -1
   } else {
     acc[i] = accuracy_vec(test$class, pred_class)
