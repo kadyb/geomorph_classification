@@ -35,9 +35,8 @@ rm(list = ls())
 source("code/misc/spatial_predict.R")
 
 ## example class to determine the probability of occurrence
-## we need to subtract 1 from original classification table
-## 14: rock wall or rock slope
-class_ID = 14 - 1
+## 13: single rock
+class_ID = 13
 
 variables = list.files("data/variables/", pattern = ".tif", full.names = TRUE)
 var = read_stars(variables, proxy = TRUE)
