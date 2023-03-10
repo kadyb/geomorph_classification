@@ -1,8 +1,6 @@
 ## TODO:
-# 3. mapa klasyfikacji (trzeba jeszcze odjac -1)
 # 7. dopasowac ID klas zgodnie z tabela!!!!
 # 8. zrobic wygladzanie
-# 9. sprawdzic jeszcze raz ile jest klas na mapach
 
 library("stars")
 library("xgboost")
@@ -35,8 +33,8 @@ rm(list = ls())
 source("code/misc/spatial_predict.R")
 
 ## example class to determine the probability of occurrence
-## 13: single rock
-class_ID = 13
+## 14: rock wall or rock slope
+class_ID = 14
 
 variables = list.files("data/variables/", pattern = ".tif", full.names = TRUE)
 var = read_stars(variables, proxy = TRUE)

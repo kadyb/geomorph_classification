@@ -1,21 +1,11 @@
 library("stars")
 library("corrr")
+source("code/misc/getRegion.R")
 
 tab = read.csv("data/classification_table.csv")
 files = list.files("data/digital_maps", recursive = TRUE,
                    pattern = "OK_POWIERZCHNIE_PODSTAWOWE+\\.shp$",
                    full.names = TRUE)
-
-## this function returns the name of the sheet from the filepath
-getRegion = function(f) {
-  x = unlist(strsplit(f, split = "/", fixed = TRUE))
-  x = x[3]
-  x = unlist(strsplit(x, "_", fixed = TRUE))
-  x = x[-c(1:5)]
-  x = x[1:(length(x) - 1)] # remove last segment
-  x = paste(x, collapse = "_")
-  return(x)
-}
 
 res = c(30, 30)
 if (!dir.exists("data/raster_maps")) dir.create("data/raster_maps")

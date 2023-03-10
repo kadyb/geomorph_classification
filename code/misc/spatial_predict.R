@@ -1,5 +1,6 @@
 spatial_predict = function(model, df, class_ID) {
-  ## predict() in XGBoost runs in parallel by default (uses all threads)
+  ## predict() in XGBoost uses as many threads as set in `xgb.Booster` (all by default)
+  ## additionally, conversion matrix to `xgb.DMatrix` uses multiple threads too
   pred = predict(model, as.matrix(df), reshape = TRUE)
   pred_class = max.col(pred) - 1L
   prob_class = pred[, class_ID] * 100
