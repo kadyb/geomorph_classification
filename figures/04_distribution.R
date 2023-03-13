@@ -48,3 +48,5 @@ ggplot(df, aes(Name, Freq)) +
         axis.line = element_line(colour = "black", linewidth = 0.5),
         axis.title = element_text(face = "bold"),
         axis.text.x = element_text(angle = 45, vjust = 0.5))
+
+ggsave("figures/04_distribution.png", width = 8, height = 4)

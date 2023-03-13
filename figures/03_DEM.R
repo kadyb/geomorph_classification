@@ -83,3 +83,5 @@ p3
 plot_final = insert_xaxis_grob(p1, p3, position = "top")
 plot_final = insert_yaxis_grob(plot_final, p2, position = "right")
 ggdraw(plot_final)
+
+ggsave("figures/03_DEM.png", width = 8, height = 6, bg = "white")

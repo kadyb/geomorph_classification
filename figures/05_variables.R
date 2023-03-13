@@ -94,3 +94,6 @@ p8 = ggplot() +
   theme_void() +
   theme(plot.title = element_text(hjust = 0.5, face = "bold"))
 p8
+
+plot_grid(p1, p2, p3, p4, p5, p6, p7, p8, ncol = 3)
+ggsave("figures/05_variables.png", width = 7, height = 5, bg = "white")
