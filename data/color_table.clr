@@ -1,0 +1,56 @@
+1 191 255 255 255 anthropogenic water reservoir 
+0 255 255 255 255 lack of research
+3 206 170 97 255 equalization surface in the top position
+4 217 191 127 255 equalization surface in the slope position
+5 214 194 176 255 equalization surface in the basins of valleys
+6 145 119 128 255 front of the structural threshold (cuesta)
+7 130 61 0 255 back of the structural threshold (cuesta)
+8 203 167 150 255 intra-mountain basin
+9 140 0 0 255 denudational outcrop - inselberg
+10 170 0 0 255 denudational outcrop - volcanic neck
+11 178 18 18 255 denudational outcrop - tableland
+12 217 54 54 255 denudational outcrop - others
+13 229 184 138 255 single rock
+14 209 144 82 255 rock wall or rock slope
+15 147 119 108 255 accumulative rubble slope
+16 255 229 166 255 active landslide
+17 204 166 120 255 headwater niche
+18 229 201 122 255 deflation trough
+19 219 171 0 255 single stabilized dune
+20 219 171 0 255 complex of stabilized dunes
+21 255 255 0 255 dunes plain
+22 229 195 0 255 loess hump
+23 255 255 171 255 loess plain
+24 255 204 89 255 plain of aeolian sands
+25 213 232 166 255 valley bottom of a flat-bottomed river
+26 112 178 82 255 floodplain
+27 178 178 0 255 alluvial fan
+28 112 168 0 255 proluvial plain
+29 191 178 219 255 flat moraine upland
+30 187 137 215 255 wavy moraine upland
+31 168 0 133 255 drumlins and related forms
+32 242 204 217 255 large-scale rectilinear shafts
+33 9 41 115 255 postglacial gutter
+34 97 194 182 255 sill of a glacial cirque or valley
+35 124 45 143 255 postglacial trough
+36 168 0 229 255 winding dikes from subglacial water erosion
+37 154 229 0 255 glacimarginal cone
+38 158 166 214 255 ice contact edge
+39 217 38 242 255 valley bottom with fluvioglacial cover
+40 163 98 186 255 valley bottom with moraine cover
+41 115 115 0 255 hilly moraine
+42 217 204 204 255 kame and kame table
+43 204 204 102 255 kame terrace
+44 245 245 76 255 melting cavity
+45 204 245 115 255 sander/glacifluvial cone 
+46 140 217 102 255 plain or sandy trail
+47 229 191 76 255 proglacial valley
+48 98 152 43 255 marginal valley
+49 102 163 115 255 meltwater erosion plain
+50 255 255 102 255 beach
+51 218 242 0 255 coastal dunes
+52 0 168 135 255 scythe or spit
+53 102 204 153 255 retrograde delta
+54 0 115 166 255 coastal plain
+55 255 217 232 255 periglacial denudation plain
+56 255 127 166 255 relict rock glacier
