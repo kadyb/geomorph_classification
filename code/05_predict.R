@@ -1,13 +1,8 @@
-## TODO:
-# 7. dopasowac ID klas zgodnie z tabela!!!!
-# 8. zrobic wygladzanie
-
 library("stars")
 library("xgboost")
 set.seed(1)
 
 ## MODEL TRAINING --------------------------------------------------------------
-
 ## train model on whole dataset
 df = readRDS("data/dataset.rds")
 df$class = as.numeric(df$class) - 1
@@ -127,13 +122,6 @@ r[[1]] = as.integer(r[[1]])
 ## need to add one more break in `cut()`
 r[[1]] = cut(r[[1]], breaks = c(-1L, old_class), labels = tab$CODE)
 r[[1]] = as.integer(as.character(r[[1]])) # factor to numeric
-
-# rr = as.vector(r[[1]])
-# vec = rep.int(NA_integer_, length(rr)) # empty vector to replace values
-# for (i in seq_along(old_class)) {
-#   vec[rr == old_class[i]] = tab$CODE[i]
-# }
-# r[[1]] = vec
 
 ## overwrite
 write_stars(r, file.path("output", "classification.tif"), options = "COMPRESS=LZW",
