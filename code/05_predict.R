@@ -6,7 +6,9 @@ library("stars")
 library("xgboost")
 set.seed(1)
 
-### train model on whole dataset ###
+## MODEL TRAINING --------------------------------------------------------------
+
+## train model on whole dataset
 df = readRDS("data/dataset.rds")
 df$class = as.numeric(df$class) - 1
 num_class = length(unique(df$class))
@@ -28,13 +30,13 @@ xgb.save(model, "results/xgb.model")
 var_imp = xgb.importance(model = model)
 write.csv(var_imp, "results/variable_importance.csv", row.names = FALSE)
 
-### predict ###
+## PREDICT ---------------------------------------------------------------------
 rm(list = ls())
 source("code/misc/spatial_predict.R")
 
 ## example class to determine the probability of occurrence
 ## 14: rock wall or rock slope
-class_ID = 14
+class_ID = 14 - 2
 
 variables = list.files("data/variables/", pattern = ".tif", full.names = TRUE)
 var = read_stars(variables, proxy = TRUE)
@@ -107,3 +109,58 @@ tmp = tempfile(fileext = ".vrt")
 gdal_utils(util = "buildvrt", source = tiles_path, destination = tmp)
 gdal_utils(util = "translate", source = tmp, destination = file.path("output", "uncertainty.tif"),
            options = c("-co", "COMPRESS=LZW"))
+
+## POSTPROCESSING --------------------------------------------------------------
+rm(list = ls())
+
+## need to swap the numbering from xgboost to classification table
+tab = read.csv("data/classification_table.csv")
+tab = tab[tab$CODE != 0, ]
+tab = tab[tab$CODE != 21, ]
+tab = tab[tab$CODE != 50, ]
+old_class = as.integer(as.factor(tab$CODE)) - 1L # range: 0 - 51
+
+r = read_stars("output/classification.tif", proxy = FALSE)
+r[[1]] = as.integer(r[[1]])
+
+## reclassify
+## need to add one more break in `cut()`
+r[[1]] = cut(r[[1]], breaks = c(-1L, old_class), labels = tab$CODE)
+r[[1]] = as.integer(as.character(r[[1]])) # factor to numeric
+
+# rr = as.vector(r[[1]])
+# vec = rep.int(NA_integer_, length(rr)) # empty vector to replace values
+# for (i in seq_along(old_class)) {
+#   vec[rr == old_class[i]] = tab$CODE[i]
+# }
+# r[[1]] = vec
+
+## overwrite
+write_stars(r, file.path("output", "classification.tif"), options = "COMPRESS=LZW",
+            type = "Byte", NA_value = 255)
+
+## remove small patches
+system(
+  paste(
+    "gdal_sieve.py", "-st 12", "output/classification.tif", "output/classification_post.tif"
+  )
+)
+
+## smooth raster
+tmp = tempfile(fileext = ".sdat")
+system(
+  paste(
+    "saga_cmd grid_filter 6",
+    "-INPUT", "output/classification_post.tif",
+    "-RESULT", tmp,
+    "-KERNEL_RADIUS", 1
+  )
+)
+
+## compress and change datatype
+system(
+  paste(
+    "gdal_translate", tmp, "output/classification_post.tif",
+    "-co COMPRESS=LZW", "-ot Byte"
+  )
+)
