@@ -51,23 +51,3 @@ ggplot(output, aes(log(Freq), y)) +
         strip.background = element_rect(fill = NA, colour = NA))
 
 ggsave("figures/08_ALE_range.png", width = 8, height = 5)
-
-
-ggplot(rang, aes(log(Freq), y)) +
-  geom_point(aes(colour = var), alpha = 0.8) +
-  # geom_smooth(method = "loess", formula = "y ~ x", se = FALSE, color = "black", alpha = 0.1) +
-  geom_line(stat = "smooth", method = "loess", formula = "y ~ x", color = "black", alpha = 0.8) +
-  scale_colour_brewer(palette = "Dark2", name = "Variable") +
-  ylim(c(0, 2)) +
-  labs(title = "Toruń") +
-  xlab("Landform representativeness (log)") +
-  ylab("Range") +
-  theme_bw() +
-  theme(panel.border = element_blank(),
-        panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank(),
-        axis.text = element_text(color = "black"),
-        axis.line = element_line(colour = "black", linewidth = 0.5),
-        axis.title = element_text(face = "bold"),
-        axis.text.x = element_text(angle = 45, vjust = 0.5),
-        plot.title = element_text(hjust = 0.5, face = "bold"))
