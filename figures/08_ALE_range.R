@@ -40,7 +40,7 @@ ggplot(output, aes(log(Freq), y)) +
   scale_colour_brewer(palette = "Dark2", name = "Variable") +
   ylim(c(0, 2)) +
   xlab("Landform representativeness (log)") +
-  ylab("ALE range") +
+  ylab("Probability amplitude") +
   theme_bw() +
   theme(panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(),
