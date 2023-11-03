@@ -130,7 +130,7 @@ write_stars(r, file.path("output", "classification.tif"), options = "COMPRESS=LZ
 ## remove small patches
 system(
   paste(
-    "gdal_sieve.py", "-st 12", "output/classification.tif", "output/classification_post.tif"
+    "gdal_sieve.py", "-st 20", "output/classification.tif", "output/classification_post.tif"
   )
 )
 
@@ -141,7 +141,7 @@ system(
     "saga_cmd grid_filter 6",
     "-INPUT", "output/classification_post.tif",
     "-RESULT", tmp,
-    "-KERNEL_RADIUS", 1
+    "-KERNEL_RADIUS", 2
   )
 )
 
