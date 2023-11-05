@@ -15,7 +15,7 @@ D18,ostaniec denudacyjny - nek,denudational outcrop - volcanic neck,10,#aa0000
 D19,ostaniec denudacyjny - góra stołowa,denudational outcrop - tableland,11,#b21212
 D20,ostaniec denudacyjny - pozostałe,denudational outcrop - others,12,#d93636
 D21,pojedyncza skałka,single rock,13,#e5b88a
-D24,ściana skalna lub stok skalny,rock wall or rock slope,14,#d19052
+D24,stok,slope surface,14,#d19052
 D25,akumulacyjny stok gruzowy,accumulative rubble slope,15,#93776c
 D26,osuwisko aktywne,active landslide,16,#ffe5a6
 D34,nisza źródliskowa,headwater niche,17,#cca678
@@ -59,6 +59,6 @@ L05,plaża,beach,50,#ffff66
 L06,wydmy nadbrzeżne,coastal dunes,51,#daf200
 L07,kosa lub mierzeja,scythe or spit,52,#00a887
 L08,delta wsteczna,retrograde delta,53,#66cc99
-L09,równina nadmorska,coastal plain,54,#0073a6
+L09,równina pojeziorna,lacustrine plain,54,#0073a6
 Y01,równina denudacji peryglacjalnej,periglacial denudation plain,55,#ffd9e8
 Y02,reliktowy lodowiec gruzowy,relict rock glacier,56,#ff7fa6
