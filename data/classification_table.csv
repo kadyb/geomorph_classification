@@ -34,14 +34,14 @@ F19,stożek napływowy,alluvial fan,27,#b2b200
 F20,równina proluwialna,proluvial plain,28,#70a800
 G01,wysoczyzna morenowa płaska,flat moraine upland,29,#bfb2db
 G02,wysoczyzna morenowa falista,wavy moraine upland,30,#bb89d7
-G06,drumliny i formy pokrewne,drumlins and related landforms,31,#a80085
-G07,"wielkoskalowe prostoliniowe wały
-moreny dennej",megascale glacial lineations,32,#f2ccd9
+G06,"starsza forma przeobrażona
+subglacjalnie",overridden landform,31,#a80085
+G07,zagłębienie końcowe,terminal basin,32,#f2ccd9
 G12,żłób polodowcowy,glacial trough,33,#092973
 G16,"próg kotła polodowcowego lub doliny
 wiszącej",cirque step or hanging valley step,34,#61c2b6
 G18,rynna polodowcowa,tunnel valley,35,#7c2d8f
-G19,kręte wały z erozji wód subglacjalnych,glacial curvilineations,36,#a800e5
+G19,morena czołowa spiętrzona,thrust moraine,36,#a800e5
 G23,stożek glacimarginalny,ice-contact fan,37,#9ae500
 G24,krawędź kontaktu lodowego,ice-contact sedimentary scarp,38,#9ea6d6
 G25,dno doliny z pokrywą fluwioglacjalną,glacial trough bottom with glacifluvial cover,39,#d926f2
