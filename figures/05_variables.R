@@ -11,8 +11,8 @@ var = as.data.frame(var)
 colnames(var)[3:8] = names
 
 p1 = ggplot() +
-  geom_raster(data = var, aes(x = x, y = y, fill = slope)) +
-  scale_fill_distiller(palette = "Greys", na.value = NA, name = NULL) +
+  geom_raster(data = var, aes(x = x, y = y, fill = sqrt(slope))) +
+  scale_fill_distiller(palette = "GnBu", na.value = NA, name = NULL) +
   labs(title = "Slope") +
   coord_equal() +
   theme_void() +
@@ -20,8 +20,8 @@ p1 = ggplot() +
 p1
 
 p2 = ggplot() +
-  geom_raster(data = var, aes(x = x, y = y, fill = stdev)) +
-  scale_fill_distiller(palette = "Greys", na.value = NA, name = NULL) +
+  geom_raster(data = var, aes(x = x, y = y, fill = sqrt(stdev))) +
+  scale_fill_distiller(palette = "GnBu", na.value = NA, name = NULL) +
   labs(title = "St. Dev.") +
   coord_equal() +
   theme_void() +
@@ -31,7 +31,7 @@ p2
 # sinus transformation
 p3 = ggplot() +
   geom_raster(data = var, aes(x = x, y = y, fill = sin(multitpi))) +
-  scale_fill_distiller(palette = "Greys", na.value = NA, name = NULL) +
+  scale_fill_distiller(palette = "Spectral", na.value = NA, name = NULL) +
   labs(title = "Multi-scale TPI") +
   coord_equal() +
   theme_void() +
@@ -39,8 +39,8 @@ p3 = ggplot() +
 p3
 
 p4 = ggplot() +
-  geom_raster(data = var, aes(x = x, y = y, fill = convexity)) +
-  scale_fill_distiller(palette = "Greys", na.value = NA, name = NULL) +
+  geom_raster(data = var, aes(x = x, y = y, fill = sqrt(convexity))) +
+  scale_fill_distiller(palette = "GnBu", na.value = NA, name = NULL, direction = 1) +
   labs(title = "Convexity") +
   coord_equal() +
   theme_void() +
@@ -48,8 +48,8 @@ p4 = ggplot() +
 p4
 
 p5 = ggplot() +
-  geom_raster(data = var, aes(x = x, y = y, fill = entropy / 1000)) +
-  scale_fill_distiller(palette = "Greys", na.value = NA, name = NULL) +
+  geom_raster(data = var, aes(x = x, y = y, fill = sqrt(entropy))) +
+  scale_fill_distiller(palette = "GnBu", na.value = NA, name = NULL) +
   labs(title = "Entropy") +
   coord_equal() +
   theme_void() +
@@ -57,8 +57,8 @@ p5 = ggplot() +
 p5
 
 p6 = ggplot() +
-  geom_raster(data = var, aes(x = x, y = y, fill = openness)) +
-  scale_fill_distiller(palette = "Greys", na.value = NA, name = NULL) +
+  geom_raster(data = var, aes(x = x, y = y, fill = exp(openness))) +
+  scale_fill_distiller(palette = "GnBu", na.value = NA, name = NULL, direction = 1) +
   labs(title = "Openness") +
   coord_equal() +
   theme_void() +
@@ -73,7 +73,7 @@ colnames(var)[3] = "median500"
 fact = 2400 / max(var$median500, na.rm = TRUE) # fix maximum value
 p7 = ggplot() +
   geom_raster(data = var, aes(x = x, y = y, fill = median500 * fact )) +
-  scale_fill_distiller(palette = "Greys", na.value = NA, name = NULL) +
+  scale_fill_distiller(palette = "RdYlGn", na.value = NA, name = NULL) +
   labs(title = "Median (500 m)") +
   coord_equal() +
   theme_void() +
@@ -88,7 +88,7 @@ colnames(var)[3] = "median1000"
 fact = 2400 / max(var$median1000, na.rm = TRUE) # fix maximum value
 p8 = ggplot() +
   geom_raster(data = var, aes(x = x, y = y, fill = median1000 * fact)) +
-  scale_fill_distiller(palette = "Greys", na.value = NA, name = NULL) +
+  scale_fill_distiller(palette = "RdYlGn", na.value = NA, name = NULL) +
   labs(title = "Median (1000 m)") +
   coord_equal() +
   theme_void() +
