@@ -16,4 +16,4 @@ The `results` directory contains the following files with the results of this st
 - `maps_crossvalidation.csv` - classification accuracy of the XGBoost model for individual maps using cross-validation
 - `variable_importance.csv` - significance of geomorphometric variables calculated for the XGBoost model
 
-  Additionally, the `1B_ALE_plots.pdf` file in the `appendix` directory contains generated accumulated local effects (ALE) plots for all landforms.
+Additionally, the `1B_ALE_plots.pdf` file in the `appendix` directory contains generated accumulated local effects (ALE) plots for all landforms.
