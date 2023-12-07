@@ -1,6 +1,6 @@
 # Gomorphological classification
 
-This repository contains the data, code, and results for “How can a classifier’s decisions be explained in automatic geomorphological mapping?” article.
+This repository contains the code and results for “How can a classifier’s decisions be explained in automatic geomorphological mapping?” article.
 
 Reference geomorphological maps are available from the Head Office of Geodesy and Cartography in Poland and are licensed, therefore they are not publicly available.
 
