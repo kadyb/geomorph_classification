@@ -49,4 +49,4 @@ ggplot(df_output, aes(Freq / size * 100, y)) +
         strip.background = element_rect(fill = NA, colour = NA)) +
   guides(colour = guide_legend(override.aes = list(size = 2.5)))
 
-ggsave("08_ALE_range.png", width = 8, height = 5)
+ggsave("figures/08_ALE_range.png", width = 8, height = 5)
