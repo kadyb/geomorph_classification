@@ -2,7 +2,7 @@ library("stars")
 library("ggplot2")
 
 maps = list.files("data/raster_maps", pattern = "\\.tif$", full.names = TRUE)
-rds = list.files("code/ALE_test/rds", pattern = "\\.rds$", full.names = TRUE)
+rds = list.files("data/rds", pattern = "\\.rds$", full.names = TRUE)
 
 df_output = data.frame(x = double(), y = double(), var = factor(), class = double(),
                        class2 = factor())
