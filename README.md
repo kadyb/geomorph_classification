@@ -12,6 +12,7 @@ Reference geomorphological maps are available from the Head Office of Geodesy an
 4. Scripts for train and validate machine learning models are defined in the following files: `03A_randomforest.R`, `03B_xgboost.R`, and `03C_lightgbm.R`. Please note that this process is very time-consuming.
 5. Cross-validation for the best classifier (in this case XGBoost) for individual maps (morphogenetic zones) can be performed using `04_maps_crossvalidation.R`.
 6. Prediction for the entire country can be made using `05_predict.R`. The result is three products, i.e. a landform classification map, a classification uncertainty map and a probability map of a specified landform. In addition, post-processing is performed including modal and sieve filters to smooth the output.
+7. The accumulated local effects are calculated in the `06_ALE.R` for each sheet.
 
 Note that the classes (landforms) numbering in XGBoost and LightGBM starts from 0, while in R from 1.
 
