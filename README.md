@@ -1,6 +1,6 @@
 # Gomorphological classification
 
-This repository contains the code and results for “How can a classifier’s decisions be explained in automatic geomorphological mapping?” article.
+This repository contains the code and results for “[Explanation of the influence of geomorphometric variables on the landform classification based on selected areas in Poland](https://www.nature.com/articles/s41598-024-56066-6)” article.
 
 Reference geomorphological maps are available from the Head Office of Geodesy and Cartography in Poland and are licensed, therefore they are not publicly available.
 
